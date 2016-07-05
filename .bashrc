@@ -95,7 +95,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alFh $LS_COLOR'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -124,7 +124,7 @@ if ! shopt -oq posix; then
 fi
 
 #### ajouté à la main
-# Ajoute date et heure devant historique des commandes
+# Ajoute date et heure devant l'historique des commandes
 export HISTTIMEFORMAT='%F %R '
 
 # Repeat command that needs sudo
@@ -147,3 +147,15 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+
+# More aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+function cl(){ cd "$@" && ls; }
+alias cd='cl'
+
+#function mkdircd(){ mkdir "$@" && cd "$@" && ls; }
+#alias mkdir='mkdircd'
