@@ -64,7 +64,7 @@ SMILEY="${GREEN}:)${NORMAL}"
 FROWNY="${RED}:(${NORMAL}"
 SELECT="if [ \$? = 0 ]; then echo \"${SMILEY}\"; else echo \"${FROWNY}\"; fi"
 if [ "$color_prompt" = yes ]; then
-    PS1="${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${WHITE}: \`${SELECT}\` \[\033[01;34m\]\W${NORMAL}\$ "
+    PS1="${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${WHITE}: \`${SELECT}\` \[\033[01;34m\]\w${NORMAL}\$ "
 else
     PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w${NORMAL}\$ "
 fi
