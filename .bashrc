@@ -157,5 +157,31 @@ alias .....='cd ../../../..'
 function cl(){ cd "$@" && ls; }
 alias cd='cl'
 
-#function mkdircd(){ mkdir "$@" && cd "$@" && ls; }
-#alias mkdir='mkdircd'
+# Set JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+# Set HADOOP_HOME
+export HADOOP_HOME=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin
+alias start_hadoop=$HADOOP_HOME/sbin/start-all.sh
+
+# Set SPARK_HOME
+export SPARK_HOME=/usr/local/spark
+export PATH=$PATH:$SPARK_HOME/bin
+alias start_spark=$SPARK_HOME/sbin/start-all.sh
+
+# Set CASSANDRA_HOME
+export CASSANDRA_HOME=/usr/local/cassandra
+export PATH=$PATH:$CASSANDRA_HOME/bin
+
+# Set HIVE_HOME
+export HIVE_HOME=/usr/local/hive
+export PATH=$PATH:$HIVE_HOME/bin
+
+# Set DERBY_HOME
+export DERBY_HOME=/usr/local/derby
+export PATH=$PATH:$DERBY_HOME/bin
+
+export CLASSPATH=$CLASSPATH:$DERBY_HOME/lib/derby.jar:$DERBY_HOME/lib/derbytools.jar
+
+          
